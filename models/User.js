@@ -20,7 +20,7 @@ const UserSchema = new mongoose.Schema({
     },
     location: {
         type: String,
-        default:  "Los Angeles USA" 
+        required: true,
     },
 
 
