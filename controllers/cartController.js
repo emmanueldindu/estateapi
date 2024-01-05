@@ -44,7 +44,7 @@ module.exports = {
     getCart: async (req, res) => {
         const userId = req.params.id;
         try {
-            const cart = await Cart.find({ userId }).populate("products.cartItem", "_id title owner image");
+            const cart = await Cart.find({ userId : userId }).populate("products.cartItem", "_id title owner image");
             res.status(200).json(cart)
         } catch (error) {
             res.status(500).json(error)
