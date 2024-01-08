@@ -6,7 +6,11 @@ module.exports = {
 
     addTocart: async (req, res) => {
         const userId = req.user.id;
-        const { cartItem, quantity } = req.body
+        const { cartItem, quantity } =  ({
+            cartItem: req.body.cartItem,
+            quantity: req.body.quantity
+
+        })
         
         try {
             const cart = await Cart.findOne({userId})
