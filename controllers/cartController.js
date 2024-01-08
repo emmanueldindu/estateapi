@@ -66,6 +66,7 @@ module.exports = {
                 { $pull: { products: { _id: cartItemId } } },
                 {new: true}
             )
+            // 
             
             if (!updatedCart) {
                 return res.status(404).json("Cart item not found")
